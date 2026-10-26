@@ -1,0 +1,78 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+*.o
+*.a
+*.so
+
+# Circom compilation
+circuits/*.r1cs
+circuits/*.wasm
+circuits/*_js/
+
+# SNARK proof files
+*.zkey
+*.ptau
+*.vkey.json
+proof.json
+witness.json
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+coverage/
+.mocha_output
+junit.xml
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+.cache
+
+# Production
+dist/
+build/
+
+# Secret keys and credentials
+*.key
+*.pem
+.aws/
+.ssh/
+
+# Compiled files
+*.js
+!scripts/**/*.js
+!tests/**/*.js

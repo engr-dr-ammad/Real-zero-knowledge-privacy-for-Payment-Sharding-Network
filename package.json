@@ -1,0 +1,34 @@
+{
+  "name": "zero-knowledge-payment-sharding",
+  "version": "1.0.0",
+  "description": "Real zero-knowledge proofs for payment sharding network with digital euro compliance",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run compile-circuits && npm run build-ts",
+    "compile-circuits": "node scripts/compile-circuits.js",
+    "build-ts": "tsc",
+    "test": "node --experimental-vm-modules --input-type=module tests/test.js",
+    "dev": "ts-node src/index.ts",
+    "generate-proofs": "node scripts/generate-proofs.js"
+  },
+  "keywords": [
+    "zero-knowledge",
+    "privacy",
+    "circom",
+    "snarkjs",
+    "payment-sharding",
+    "digital-euro"
+  ],
+  "author": "Payment Sharding Network Contributors",
+  "license": "MIT",
+  "dependencies": {
+    "circomlibjs": "^0.1.1",
+    "snarkjs": "^0.7.0",
+    "bigint-buffer": "^1.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
