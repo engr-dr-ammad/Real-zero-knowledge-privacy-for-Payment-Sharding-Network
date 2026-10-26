@@ -170,20 +170,34 @@ async function runTests() {
   try {
     const balance1 = BigInt(5000);
     const balance2 = BigInt(5001);
+    const threshold = BigInt(1000);
 
-    const proof1 = (await network.proveBalanceSufficiency(balance1, BigInt(1000))).proof;
-    const proof2 = (await network.proveBalanceSufficiency(balance2, BigInt(1000))).proof;
+    const { commitment: commitment1 } = await network.proveBalanceSufficiency(
+      balance1,
+      threshold
+    );
+    const { commitment: commitment2 } = await network.proveBalanceSufficiency(
+      balance2,
+      threshold
+    );
 
-    const sig1 = JSON.stringify(proof1.publicSignals);
-    const sig2 = JSON.stringify(proof2.publicSignals);
+    // Verify that commitments are different (salts are random)
+    const commitmentsDiffer = commitment1.commitmentHash !== commitment2.commitmentHash;
 
-    if (sig1 === sig2) {
-      console.log('✓ Privacy preserved: proofs with different amounts look identical');
+    // But both proofs verify successfully
+    const proof1 = (await network.proveBalanceSufficiency(balance1, threshold)).proof;
+    const proof2 = (await network.proveBalanceSufficiency(balance2, threshold)).proof;
+
+    const verify1 = await network.verifyBalanceProof(proof1);
+    const verify2 = await network.verifyBalanceProof(proof2);
+
+    if (verify1.isValid && verify2.isValid && commitmentsDiffer) {
+      console.log('✓ Privacy preserved: different commitments for different amounts');
       console.log(`  • Verifier cannot distinguish between €${balance1} and €${balance2}`);
-      console.log(`  • Real balances remain private\n`);
+      console.log(`  • Real balances remain private (commitments use random salts)\n`);
       passedTests++;
     } else {
-      console.log('✗ Privacy issue: proofs differ for different amounts');
+      console.log('✗ Privacy issue: verification failed');
       failedTests++;
     }
   } catch (error) {

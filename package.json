@@ -8,7 +8,7 @@
     "build": "npm run compile-circuits && npm run build-ts",
     "compile-circuits": "node scripts/compile-circuits.js",
     "build-ts": "tsc",
-    "test": "node --experimental-vm-modules --input-type=module tests/test.js",
+    "test": "node --experimental-vm-modules tests/test.js",
     "dev": "ts-node src/index.ts",
     "generate-proofs": "node scripts/generate-proofs.js"
   },

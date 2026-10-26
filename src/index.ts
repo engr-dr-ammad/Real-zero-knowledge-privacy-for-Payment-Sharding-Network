@@ -1,6 +1,6 @@
-import { ProofGenerator } from './ProofGenerator';
-import { ProofVerifier } from './ProofVerifier';
-import { CryptoUtils } from './crypto';
+import { ProofGenerator } from './ProofGenerator.js';
+import { ProofVerifier } from './ProofVerifier.js';
+import { CryptoUtils } from './crypto.js';
 import {
   BalanceProofInput,
   HoldingLimitProofInput,

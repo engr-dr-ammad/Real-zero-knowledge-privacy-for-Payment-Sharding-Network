@@ -3,9 +3,9 @@ import { createHash } from 'crypto';
 export class CryptoUtils {
   static generateSalt(): bigint {
     const randomBytes = createHash('sha256')
-      .update(Math.random().toString() + Date.now())
-      .digest();
-    return BigInt('0x' + randomBytes.toString('hex').substring(0, 16));
+      .update(Math.random().toString() + Date.now() + Math.random())
+      .digest('hex');
+    return BigInt('0x' + randomBytes.substring(0, 16));
   }
 
   static poseidonHash(a: bigint, b: bigint): bigint {

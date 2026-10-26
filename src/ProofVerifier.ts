@@ -1,4 +1,4 @@
-import { ZKProof, VerificationResult } from './types';
+import { ZKProof, VerificationResult } from './types.js';
 
 export class ProofVerifier {
   private verifyingKeys: Map<string, any> = new Map();

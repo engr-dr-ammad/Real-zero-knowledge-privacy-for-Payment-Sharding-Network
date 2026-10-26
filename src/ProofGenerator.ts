@@ -4,8 +4,8 @@ import {
   TransactionComplianceProofInput,
   ZKProof,
   ProofCommitment
-} from './types';
-import { CryptoUtils } from './crypto';
+} from './types.js';
+import { CryptoUtils } from './crypto.js';
 
 export class ProofGenerator {
   private circuits: Map<string, any> = new Map();
@@ -165,8 +165,8 @@ export class ProofGenerator {
   private generateProofComponent(): string[] {
     // Simulated proof component (real version uses snarkjs)
     return [
-      (BigInt.asUintN(256, BigInt(Math.random() * 1e15))).toString(),
-      (BigInt.asUintN(256, BigInt(Math.random() * 1e15))).toString()
+      (BigInt.asUintN(256, BigInt(Math.floor(Math.random() * 1e15)))).toString(),
+      (BigInt.asUintN(256, BigInt(Math.floor(Math.random() * 1e15)))).toString()
     ];
   }
 
