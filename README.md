@@ -2,6 +2,8 @@
 
 A production-ready implementation of zero-knowledge proofs for payment transactions with digital euro compliance. This system replaces traditional SHA-256 placeholders with real cryptographic proofs that enable users to prove financial statements without revealing sensitive information.
 
+**Developed by Ammad Aslam with AI-assisted tooling**
+
 ## 🎯 Key Features
 
 ### Zero-Knowledge Proofs
@@ -330,6 +332,18 @@ This is a reference implementation. For production use with real financial data:
 For issues, questions, or contributions:
 - Open an issue on GitHub
 - Contact: security@paymentsharding.network
+
+---
+
+## Attribution
+
+**Developed by Ammad Aslam with AI-assisted tooling**
+
+This project was designed and implemented to provide cryptographic privacy for digital payment systems, with a focus on digital euro compliance and zero-knowledge proofs.
+
+- **Author**: Ammad Aslam (engr-dr-ammad)
+- **Email**: aamdm1@iscte-iul.pt
+- **Repository**: https://github.com/engr-dr-ammad/Real-zero-knowledge-privacy-for-Payment-Sharding-Network
 
 ---
 

@@ -20,7 +20,14 @@
     "payment-sharding",
     "digital-euro"
   ],
-  "author": "Payment Sharding Network Contributors",
+  "author": "Ammad Aslam <aamdm1@iscte-iul.pt>",
+  "contributors": [
+    {
+      "name": "Ammad Aslam",
+      "email": "aamdm1@iscte-iul.pt",
+      "url": "https://github.com/engr-dr-ammad"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "circomlibjs": "^0.1.1",
